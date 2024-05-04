@@ -1,6 +1,6 @@
 from bitcoin import *
 import requests
-
+import random
 err = False
 while True:
     if err :
@@ -9,7 +9,8 @@ while True:
     print("Private Key:", private_key)
     public_key = privtopub(private_key)
     print("Public Key:", public_key)
-    address = pubtoaddr(public_key)
+    randomMagicNumber = random.choice([0, 5])
+    address = pubtoaddr(public_key,magicbyte=randomMagicNumber)
     print("Bitcoin Address:", address)
     url = "https://bitcoinexplorer.org/api/address/" + address
     while True:
