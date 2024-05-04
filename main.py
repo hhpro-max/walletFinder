@@ -30,7 +30,7 @@ while True:
                         file.close()
                 break        
             else:
-                print("Failed to retrieve data (the status code is not 200)")
+                print("Failed to retrieve data (the status code is not 200) status code is : " + str(response.status_code))
                 print("TRYING AGAIN ... (counts = " + str(tryCounts) + " )")
                 tryCounts += 1
                 if tryCounts > 10 :
